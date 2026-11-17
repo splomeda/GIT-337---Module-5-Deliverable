@@ -15,3 +15,7 @@ Use:
 5. Zip the complete folder. Re-extract that ZIP and test it before submission.
 
 Do not replace this scaffold with a framework, library, or navigation plug-in.
+
+AI Disclosure: 
+1. Used MS Copilot to generate a cybersecurity icon, a database icon, and a cloud computing icon.
+2. 

@@ -100,6 +100,41 @@ h2 {
   cursor: pointer;
   background-color: var(--brand);
 }
+.security-bg {
+  background-image: url("img/cybersecurity-icon01.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-position-x: 80%;
+  background-position-y: 80%;
+  background-size: 40%;
+}
+.database-bg {
+  background-image: url("img/database-design01.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-position-x: 90%;
+  background-position-y: 90%;
+  background-size: 40%;
+}
+.cloud-computing {
+  background-image: url("img/cloud-compute01.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position-x: 140px;
+  background-position-y: 70px;
+}
+.news {
+  margin-top: 40px;
+}
+.news a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: 0.2s;
+}
+.news a:hover {
+  color: var(--action);
+}
 .location-wrap {
   flex-direction: column;
   display: flex;
@@ -186,7 +221,20 @@ main {
     padding: 20px;
     transition: 0.4s;
   }
-  .service-card-left {
+  .security-bg {
+    background-size: 40%;
+    background-position-x: 185px;
+    background-position-y: 40px;
+  }
+  .database-bg {
+    background-size: 35%;
+    background-position-x: 200px;
+    background-position-y: 60px;
+  }
+  .cloud-computing {
+    background-size: 35%;
+    background-position-x: 190px;
+    background-position-y: 60px;
   }
   .location-wrap {
     flex-direction: row;
