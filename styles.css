@@ -20,6 +20,9 @@ body {
     1rem/1.5 Arial,
     sans-serif;
 }
+h2 {
+  margin-top: 0;
+}
 .skip-link {
   position: absolute;
   left: 0.5rem;
@@ -44,7 +47,6 @@ body {
   color: inherit;
   font-size: 1.25rem;
   font-weight: 700;
-  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 8px;
   text-decoration: none;
@@ -81,6 +83,41 @@ body {
 .js .nav-list[data-open="false"] {
   display: none;
 }
+.service-wrap {
+  display: flex;
+  gap: 20px;
+}
+.service-card {
+  width: 33%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px;
+  transition: 0.4s;
+}
+.service-card:hover {
+  cursor: pointer;
+  background-color: var(--brand);
+}
+.location-wrap {
+  display: flex;
+  gap: 20px;
+}
+.location {
+  width: 33%;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: var(--accent);
+  border: 1px solid var(--border);
+  transition: 0.4s;
+}
+.location:hover {
+  cursor: pointer;
+  background-color: var(--brand);
+}
+.map {
+  border-radius: 6px;
+  overflow: hidden;
+}
 /* TODO: hover, focus-visible, active, and aria-current styles. */
 /* TODO: hide only the enhanced, collapsed narrow list. */
 main,
@@ -93,7 +130,7 @@ main {
   padding-block: 2rem;
 }
 /* TODO: add the relative-unit breakpoint justified in navigation-plan.html. */
-@media screen and (min-width: 48rem) {
+@media screen and (min-width: 70rem) {
   .menu-button {
     display: none;
   }
@@ -111,5 +148,20 @@ main {
   }
   #primary-nav a:hover {
     background-color: var(--action);
+  }
+  .service-card {
+    width: 33%;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+    transition: 0.4s;
+  }
+  .location {
+    width: 33%;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: var(--accent);
+    border: 1px solid var(--border);
+    transition: 0.4s;
   }
 }
