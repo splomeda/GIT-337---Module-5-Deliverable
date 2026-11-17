@@ -85,10 +85,12 @@ h2 {
 }
 .service-wrap {
   display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 .service-card {
-  width: 33%;
+  width: 100%;
+  height: 200px;
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 20px;
@@ -99,24 +101,46 @@ h2 {
   background-color: var(--brand);
 }
 .location-wrap {
+  flex-direction: column;
   display: flex;
   gap: 20px;
 }
-.location {
-  width: 33%;
+.location-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
   padding: 20px;
   border-radius: 6px;
   background-color: var(--accent);
   border: 1px solid var(--border);
   transition: 0.4s;
+  margin: 0;
 }
 .location:hover {
   cursor: pointer;
   background-color: var(--brand);
 }
+.location-card-top {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.location-card-bottom {
+  display: flex;
+  width: 100%;
+  justify-content: left;
+}
+.store {
+  max-width: 100%;
+  height: auto;
+}
 .map {
+  max-width: 100%;
   border-radius: 6px;
   overflow: hidden;
+  margin-top: 10px;
 }
 /* TODO: hover, focus-visible, active, and aria-current styles. */
 /* TODO: hide only the enhanced, collapsed narrow list. */
@@ -149,12 +173,23 @@ main {
   #primary-nav a:hover {
     background-color: var(--action);
   }
+  .location-card {
+    flex-direction: row;
+  }
+  .service-wrap {
+    flex-direction: row;
+  }
   .service-card {
     width: 33%;
     border: 1px solid var(--border);
     border-radius: 6px;
     padding: 20px;
     transition: 0.4s;
+  }
+  .service-card-left {
+  }
+  .location-wrap {
+    flex-direction: row;
   }
   .location {
     width: 33%;
