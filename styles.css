@@ -1,0 +1,115 @@
+:root {
+  --brand: #27354f;
+  --accent: #152139;
+  --action: #3487da;
+  --border: #808080;
+  --ink: #dbdbdb;
+  --paper: #fff;
+  --surface: #0d192e;
+  --max: 70rem;
+  --space: 1rem;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--surface);
+  font:
+    1rem/1.5 Arial,
+    sans-serif;
+}
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -6rem;
+  z-index: 20;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 0.75rem;
+}
+.skip-link:focus {
+  top: 0.5rem;
+}
+.site-header {
+  background: var(--brand);
+  color: var(--ink);
+  padding: var(--space);
+}
+.site-header a:hover {
+  background-color: var(--accent);
+}
+.brand {
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
+  text-decoration: none;
+}
+.brand a {
+  text-decoration: none;
+}
+.menu-button {
+  /* TODO: native button appearance, focus, and comfortable target. */
+  display: flex;
+  margin-top: 10px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: var(--accent-light);
+  transition: 0.4s;
+}
+.nav-list {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0; /* TODO: narrow layout. */
+}
+.nav-list a {
+  display: block;
+  color: var(--paper);
+  padding: 0.75rem;
+  text-decoration: none;
+}
+.nav-list a[aria-current="page"] {
+  background: var(--paper);
+  color: var(--brand);
+  font-weight: 700;
+}
+.js .nav-list[data-open="false"] {
+  display: none;
+}
+/* TODO: hover, focus-visible, active, and aria-current styles. */
+/* TODO: hide only the enhanced, collapsed narrow list. */
+main,
+footer {
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
+main {
+  min-height: 55vh;
+  padding-block: 2rem;
+}
+/* TODO: add the relative-unit breakpoint justified in navigation-plan.html. */
+@media screen and (min-width: 48rem) {
+  .menu-button {
+    display: none;
+  }
+  #primary-nav {
+    display: flex;
+    background-color: var(--accent);
+    justify-content: center;
+    border-radius: 12px;
+  }
+  #primary-nav a {
+    display: flex;
+    width: 150px;
+    justify-content: center;
+    transition: 0.3s;
+  }
+  #primary-nav a:hover {
+    background-color: var(--action);
+  }
+}
