@@ -1,6 +1,7 @@
 :root {
   --brand: #27354f;
   --accent: #152139;
+  --focus: #ffe100;
   --action: #3487da;
   --border: #808080;
   --ink: #dbdbdb;
@@ -27,7 +28,7 @@
   --space-xxs: 0.15rem;
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
-  --space-md: 1rem;
+  --space-md: 0.85rem;
   --space-mlg: 1.25rem;
   --space-lg: 1.5rem;
   --space-xl: 2rem;
@@ -40,6 +41,7 @@
   /* BORDER RADIUS */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
+  --radius-mlg: 0.75rem;
   --radius-lg: 1rem;
 }
 * {
@@ -56,7 +58,7 @@ h2,
 h3 {
   font-family: var(--font-display);
   margin: 0;
-  margin-top: 20px;
+  margin-top: var(--space-mlg);
   padding: 0;
 }
 p {
@@ -88,9 +90,7 @@ p {
   font-size: var(--title);
   font-weight: var(--font-weight);
   text-decoration: none;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 5px;
+  padding: var(--space-xs);
   transition: 0.3s;
 }
 .brand a {
@@ -102,7 +102,6 @@ p {
   margin-top: 10px;
   background: none;
   border: none;
-  border-radius: 4px;
   color: var(--accent-light);
   cursor: pointer;
 }
@@ -114,13 +113,13 @@ p {
 .nav-list a {
   display: block;
   color: var(--paper);
-  padding: 0.75rem;
+  padding: var(--space-md);
   text-decoration: none;
 }
 .nav-list a[aria-current="page"] {
   background: var(--paper);
   color: var(--brand);
-  font-weight: 700;
+  font-weight: var(--font-weight);
 }
 .js .nav-list[data-open="false"] {
   display: none;
@@ -130,13 +129,13 @@ p {
   display: flex;
   width: 120px;
   height: 30px;
-  top: 60px;
+  top: 55px;
   right: 10px;
   background-color: var(--accent);
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
 }
 .reg-login a {
   color: var(--ink);
@@ -153,15 +152,15 @@ p {
 .service-wrap {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-mlg);
 }
 .service-card {
   position: relative;
   width: 100%;
   height: 200px;
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 20px;
+  border-radius: var(--radius);
+  padding: var(--space-mlg);
   transition: 0.4s;
   color: var(--ink);
   text-decoration: none;
@@ -171,7 +170,7 @@ p {
 }
 .service-card p {
   width: 50%;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 .service-card:hover {
   cursor: pointer;
@@ -230,7 +229,7 @@ p {
 .location-wrap {
   flex-direction: column;
   display: flex;
-  gap: 20px;
+  gap: var(--space-mlg);
 }
 .location-card {
   display: flex;
@@ -238,7 +237,7 @@ p {
   width: 100%;
   height: auto;
   padding: 20px;
-  border-radius: 6px;
+  border-radius: var(--radius);
   background-color: var(--accent);
   border: 1px solid var(--border);
   transition: 0.4s;
@@ -270,6 +269,9 @@ p {
   margin-top: 10px;
 }
 /* TODO: hover, focus-visible, active, and aria-current styles. */
+a:focus-visible {
+  border: 3px solid var(--focus);
+}
 /* TODO: hide only the enhanced, collapsed narrow list. */
 main,
 footer {
@@ -301,7 +303,7 @@ main {
 .message-box {
   width: 100%;
   height: 250px;
-  border-radius: 6px;
+  border-radius: var(--radius);
   margin-top: 5px;
   margin-bottom: 10px;
 }
@@ -309,7 +311,7 @@ main {
   width: 100%;
   height: 40px;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius);
   margin-bottom: 5px;
   padding: 10px;
 }
@@ -321,7 +323,7 @@ main {
   align-items: center;
   margin-top: 20px;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius);
   background-color: var(--action);
   transition: 0.3s;
   text-decoration: none;
@@ -349,21 +351,21 @@ main {
     max-width: var(--measure-max-width);
     background-color: var(--accent);
     justify-content: center;
-    border-radius: 12px;
+    border-radius: var(--radius-mlg);
   }
   #primary-nav a {
     display: flex;
     width: 150px;
     justify-content: center;
     transition: 0.3s;
-    border-radius: 12px;
+    border-radius: var(--radius-mlg);
   }
   #primary-nav a:hover {
     background-color: var(--action);
-    border-radius: 12px;
+    border-radius: var(--radius-mlg);
   }
   .nav-list a[aria-current="page"] {
-    border-radius: 12px;
+    border-radius: var(--radius-mlg);
   }
   .location-card {
     flex-direction: row;
@@ -374,8 +376,8 @@ main {
   .service-card {
     width: 33%;
     border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 20px;
+    border-radius: var(--radius);
+    padding: var(--space-mlg);
     transition: 0.4s;
   }
   .service-card p {
@@ -394,7 +396,7 @@ main {
   }
   .message {
     width: 500px;
-    padding: 20px;
+    padding: var(--space-mlg);
   }
   .reg-login {
     top: 10px;
@@ -403,18 +405,18 @@ main {
   .contact-tag {
     position: fixed;
     display: flex;
-    background-color: #ffe100;
+    background-color: var(--focus);
     top: 700px;
     right: 0;
     width: 35px;
     height: 85px;
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    padding: 5px;
+    padding: var(--space-xs);
     font-weight: var(--font-weight);
     text-decoration: none;
-    border-bottom-left-radius: 8px;
-    border-top-left-radius: 8px;
+    border-bottom-left-radius: var(--radius-md);
+    border-top-left-radius: var(--radius-md);
     color: var(--accent);
     align-items: center;
     justify-content: center;
