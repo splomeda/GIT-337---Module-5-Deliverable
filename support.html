@@ -47,19 +47,21 @@
       </p>
 
       <h2 abbr title="Frequently Asked Questions">FAQs</h2>
-      <a href="#forgot-password">Password Reset</a><br />
-      <a href="#username">Recover Username</a><br />
-      <a href="#locked-out">Account Locked</a>
-      <p id="forgot-password">
-        <strong>What do I do if I forgot my password?</strong>
-      </p>
+      <div class="faq">
+        <ul>
+          <li><a href="#forgot-password">Password Reset</a></li>
+          <li><a href="#username">Recover Username</a></li>
+          <li><a href="#locked-out">Account Locked</a></li>
+        </ul>
+      </div>
+      <h3 id="forgot-password">> What do I do if I forgot my password?</h3>
       <p>
         If you have forgotten your password you can use the self-service feature
         to reset your password by clicking the link "Reset Password" which is
         underneath the password field of the login screen. If you are still
         having troubles, please give us a call.
       </p>
-      <p id="username"><strong>Where do I find my username?</strong></p>
+      <h3 id="username">> Where do I find my username?</h3>
       <p>
         You can find your username in the "User Details" section of your account
         page. If you have forgotten your username, you can use the self-service
@@ -67,9 +69,9 @@
         located under the password field of the login screen. If you are still
         having trouble, message us or give us a call.
       </p>
-      <p id="locked-out">
-        <strong>What happens if I get locked out of my account?</strong>
-      </p>
+
+      <h3 id="locked-out">> What happens if I get locked out of my account?</h3>
+
       <p>
         If you become locked out of your account - usually because you tried
         logging in with the wrong password 3 times - message us or give us a
@@ -78,7 +80,7 @@
 
       <h2>Sends Us a Message</h2>
       <fieldset class="message">
-        <label for="message">Fill in your message below:</label>
+        <label for="message">Fill in your message below*</label>
         <textarea
           id="message"
           class="message-box"
@@ -86,11 +88,12 @@
           maxlength="500"
           aria-describedby="message"
         ></textarea>
-        <label for="name">Name:</label>
+        <label for="name">Name*</label>
         <input id="name" type="text" placeholder="Name" class="input" />
-        <label for="email">Email:</label>
+        <label for="email">Email*</label>
+
         <input type="email" placeholder="example@email.com" class="input" />
-        <button class="message-btn">Submit</button>
+        <a href="#" class="message-btn">Submit</a>
       </fieldset>
     </main>
     <footer><p>&copy; 2026 Quantum Computing</p></footer>

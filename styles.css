@@ -60,10 +60,6 @@ h3 {
   padding: 0;
 }
 p {
-  margin: 0;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 0;
 }
 .skip-link {
   position: absolute;
@@ -91,6 +87,10 @@ p {
   font-size: var(--title);
   font-weight: var(--font-weight);
   text-decoration: none;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 5px;
+  transition: 0.3s;
 }
 .brand a {
   text-decoration: none;
@@ -130,6 +130,7 @@ p {
   gap: 20px;
 }
 .service-card {
+  position: relative;
   width: 100%;
   height: 200px;
   border: 1px solid var(--border);
@@ -139,33 +140,54 @@ p {
   color: var(--ink);
   text-decoration: none;
 }
+.service-card-h2 {
+  margin-top: 0;
+}
+.service-card p {
+  font-size: 12px;
+}
 .service-card:hover {
   cursor: pointer;
   background-color: var(--brand);
 }
 .security-bg {
-  background-image: url("img/cybersecurity-icon01.png");
-  background-position: right;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 80px;
+  right: 20px;
+  border-radius: 50%;
+  background-image: url("img/cybersecurity01.png");
+  background-position: center;
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-position-x: 80%;
-  background-position-y: 80%;
-  background-size: 40%;
+  border: 1px solid var(--border);
 }
 .database-bg {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 80px;
+  right: 20px;
+  border-radius: 50%;
   background-image: url("img/database-design01.png");
-  background-position: right;
+  background-position: center;
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-position-x: 90%;
-  background-position-y: 90%;
-  background-size: 40%;
+  border: 1px solid var(--border);
 }
 .cloud-computing {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 80px;
+  right: 20px;
+  border-radius: 50%;
   background-image: url("img/cloud-compute01.png");
-  background-position: right;
+  background-position: center;
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-size: 40%;
-  background-position-x: 140px;
-  background-position-y: 70px;
+  border: 1px solid var(--border);
 }
 .news {
   margin-top: 40px;
@@ -231,19 +253,29 @@ main {
   min-height: 55vh;
   padding-block: 2rem;
 }
+.faq a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.faq a:hover {
+  text-decoration: underline;
+  color: var(--action);
+}
 .message {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 100%;
   height: auto;
   border: none;
   border-top: 1px solid var(--border);
-  padding: 20px;
+  padding: 0;
+  padding-top: 10px;
 }
 .message-box {
   width: 100%;
   height: 250px;
   border-radius: 6px;
+  margin-top: 5px;
   margin-bottom: 10px;
 }
 .input {
@@ -265,10 +297,15 @@ main {
   border-radius: 6px;
   background-color: var(--action);
   transition: 0.3s;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: var(--font-weight);
 }
 .message-btn:hover {
-  background-color: #6eb6ff;
+  background-color: #0080ff;
+  color: var(--ink);
   cursor: pointer;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 /* TODO: add the relative-unit breakpoint justified in navigation-plan.html. */
@@ -314,20 +351,8 @@ main {
     padding: 20px;
     transition: 0.4s;
   }
-  .security-bg {
-    background-size: 35%;
-    background-position-x: 200px;
-    background-position-y: 55px;
-  }
-  .database-bg {
-    background-size: 35%;
-    background-position-x: 200px;
-    background-position-y: 60px;
-  }
-  .cloud-computing {
-    background-size: 35%;
-    background-position-x: 190px;
-    background-position-y: 60px;
+  .service-card p {
+    font-size: var(--size-base);
   }
   .location-wrap {
     flex-direction: row;
@@ -339,5 +364,9 @@ main {
     background-color: var(--accent);
     border: 1px solid var(--border);
     transition: 0.4s;
+  }
+  .message {
+    width: 500px;
+    padding: 20px;
   }
 }
