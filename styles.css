@@ -74,6 +74,7 @@ p {
   top: 0.5rem;
 }
 .site-header {
+  position: relative;
   background: var(--brand);
   color: var(--ink);
   padding: var(--space);
@@ -122,6 +123,31 @@ p {
   font-weight: 700;
 }
 .js .nav-list[data-open="false"] {
+  display: none;
+}
+.reg-login {
+  position: absolute;
+  display: flex;
+  width: 120px;
+  height: 30px;
+  top: 60px;
+  right: 10px;
+  background-color: var(--accent);
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  border-radius: 12px;
+}
+.reg-login a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: 0.2s;
+}
+.reg-login a:hover {
+  color: var(--action);
+  cursor: pointer;
+}
+.contact-tag {
   display: none;
 }
 .service-wrap {
@@ -369,5 +395,34 @@ main {
   .message {
     width: 500px;
     padding: 20px;
+  }
+  .reg-login {
+    top: 10px;
+    right: 20px;
+  }
+  .contact-tag {
+    position: fixed;
+    display: flex;
+    background-color: #ffe100;
+    top: 700px;
+    right: 0;
+    width: 35px;
+    height: 85px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 5px;
+    font-weight: var(--font-weight);
+    text-decoration: none;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    color: var(--accent);
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  }
+  .contact-tag:hover {
+    background-color: #e3ab2d;
+    color: var(--accent);
+    cursor: pointer;
   }
 }

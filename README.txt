@@ -16,17 +16,3 @@ Use:
 
 Do not replace this scaffold with a framework, library, or navigation plug-in.
 
-Sources
-
-Image 1: A person using a VPN on a laptop, symbolizing secure internet browsing in a modern indoor setting.
-Stefan Coders. https://www.pexels.com/photo/macbook-pro-on-brown-wooden-table-5243610/
-
-Image 2: A modern server room featuring network equipment with blue illumination. Ideal for technology themes.
-Panumas Nikhomkhai. https://www.pexels.com/photo/network-rack-17323801/
-
-Image 3: Vibrant green numbers on a computer screen, showcasing binary code and data streams.
-Tibe De Kort. https://www.pexels.com/photo/codes-on-screen-9951077/
-
-
-AI Disclosure: 
-1. 
