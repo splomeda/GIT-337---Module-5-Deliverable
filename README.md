@@ -26,4 +26,4 @@ Binyamin Mellish. https://www.pexels.com/photo/brown-2-storey-house-under-blue-s
 
 AI Disclosure:
 
-1.
+1. I used Google Gemini to help clarify rubric terminology; no code was generated or written by AI.
