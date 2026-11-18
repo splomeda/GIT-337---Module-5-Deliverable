@@ -410,7 +410,7 @@ main {
     right: 0;
     width: 35px;
     height: 85px;
-    writing-mode: vertical-rl;
+    writing-mode: vertical-rl; /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-orientation */
     text-orientation: mixed;
     padding: var(--space-xs);
     font-weight: var(--font-weight);
@@ -423,8 +423,9 @@ main {
     transition: 0.3s;
   }
   .contact-tag:hover {
-    background-color: #e3ab2d;
+    background-color: #fff200;
     color: var(--accent);
     cursor: pointer;
+    box-shadow: 0 0 8px rgb(255, 247, 0, 0.5);
   }
 }
