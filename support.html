@@ -6,6 +6,12 @@
     <title>Support | [Site Name]</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="navigation.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oxanium:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -39,6 +45,53 @@
         Find the answers you are looking for. Check out our FAQs, send a
         message, or chat with a live technician 24/7.
       </p>
+
+      <h2 abbr title="Frequently Asked Questions">FAQs</h2>
+      <a href="#forgot-password">Password Reset</a><br />
+      <a href="#username">Recover Username</a><br />
+      <a href="#locked-out">Account Locked</a>
+      <p id="forgot-password">
+        <strong>What do I do if I forgot my password?</strong>
+      </p>
+      <p>
+        If you have forgotten your password you can use the self-service feature
+        to reset your password by clicking the link "Reset Password" which is
+        underneath the password field of the login screen. If you are still
+        having troubles, please give us a call.
+      </p>
+      <p id="username"><strong>Where do I find my username?</strong></p>
+      <p>
+        You can find your username in the "User Details" section of your account
+        page. If you have forgotten your username, you can use the self-service
+        feature to recover your username. The link to recover your username is
+        located under the password field of the login screen. If you are still
+        having trouble, message us or give us a call.
+      </p>
+      <p id="locked-out">
+        <strong>What happens if I get locked out of my account?</strong>
+      </p>
+      <p>
+        If you become locked out of your account - usually because you tried
+        logging in with the wrong password 3 times - message us or give us a
+        call. Operators are standing by 24/7.
+      </p>
+
+      <h2>Sends Us a Message</h2>
+      <fieldset class="message">
+        <label for="message">Fill in your message below:</label>
+        <textarea
+          id="message"
+          class="message-box"
+          name="message"
+          maxlength="500"
+          aria-describedby="message"
+        ></textarea>
+        <label for="name">Name:</label>
+        <input id="name" type="text" placeholder="Name" class="input" />
+        <label for="email">Email:</label>
+        <input type="email" placeholder="example@email.com" class="input" />
+        <button class="message-btn">Submit</button>
+      </fieldset>
     </main>
     <footer><p>&copy; 2026 Quantum Computing</p></footer>
   </body>
