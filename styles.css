@@ -242,6 +242,7 @@ p {
   border: 1px solid var(--border);
   transition: 0.4s;
   margin: 0;
+  font-size: 12px;
 }
 .location:hover {
   cursor: pointer;

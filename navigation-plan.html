@@ -31,6 +31,27 @@
         background: #8c1d40;
         color: #fff;
       }
+      .code-block {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: auto;
+        margin: 10px;
+        padding: 10px;
+        background-color: #000;
+        color: #ccc;
+        border-radius: 12px;
+      }
+      .accepted-output {
+        display: flex;
+        width: 50%;
+        height: auto;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #00ae00;
+        background-color: #cdfbcd;
+        border-radius: 12px;
+      }
     </style>
   </head>
   <body>
@@ -123,38 +144,66 @@
       </tr>
       <tr>
         <td>Pointer/touch targets</td>
-        <td>[Expected]</td>
-        <td>[Observed]</td>
-        <td>[Pass/fail and repair]</td>
+        <td>
+          Expected all pointer/touch targets to work easily and comfortably.
+        </td>
+        <td>All pointer/touch targets worked on desktop and mobile.</td>
+        <td>Pass</td>
       </tr>
       <tr>
         <td>320px and breakpoint region</td>
-        <td>[Expected]</td>
-        <td>[Observed]</td>
-        <td>[Pass/fail and repair]</td>
+        <td>No issues were expected.</td>
+        <td>No issues.</td>
+        <td>Pass</td>
       </tr>
       <tr>
         <td>200% zoom</td>
-        <td>[Expected]</td>
-        <td>[Observed]</td>
-        <td>[Pass/fail and repair]</td>
+        <td>No issues were expected.</td>
+        <td>No issues.</td>
+        <td>Pass</td>
       </tr>
       <tr>
         <td>JavaScript unavailable</td>
-        <td>[Expected]</td>
-        <td>[Observed]</td>
-        <td>[Pass/fail and repair]</td>
+        <td>
+          I expect all links to work and for the navigation menu in mobile view
+          to be open and functional.
+        </td>
+        <td>No observed issues.</td>
+        <td>Pass</td>
       </tr>
       <tr>
         <td>CSS unavailable / wide recovery</td>
-        <td>[Expected]</td>
-        <td>[Observed]</td>
-        <td>[Pass/fail and repair]</td>
+        <td>
+          I expect all links to be visible, functional and in a logical order.
+        </td>
+        <td>
+          All links were visible and functional. One little problem was the
+          fixed contact tag I have on the lower-right side of every page.
+          Without CSS the text "contact" for the button is underneath the "Skip
+          to main content" link at the top of the page. Not really a problem,
+          but I'm going to move it.
+        </td>
+        <td>
+          Pass but with one small repair - I moved the contact tag link down in
+          the html to the bottom of the main section so there is now a Contact
+          link at the top of the page in the navigation menu and a Contact link
+          at the bottom of the page.
+        </td>
       </tr>
     </table>
     <p>
-      <strong>Screenshot filenames and what each proves:</strong> [Response]
+      <strong>Screenshot filenames and what each proves:</strong>
     </p>
+    <ul>
+      <li>
+        <code>breakpoint01.png</code> shows where the 70rem/1120px breakpoint is
+        and shows the crowding of the elements at that width.
+      </li>
+      <li>
+        <code>320px.png</code> and <code>200zoom.png</code> show that there are
+        no issues with long-labels and headings at 320px and 200% zoom.
+      </li>
+    </ul>
     <h2>4. Peer task test</h2>
     <p><strong>Tester relationship (no name needed):</strong> [Response]</p>
     <p><strong>Two tasks attempted:</strong> [Response]</p>
@@ -166,11 +215,111 @@
       Escape/focus behavior in your own words. Refer to the exact variable,
       attribute, dataset value, function, and event used.
     </p>
-    <p>[Response]</p>
+    <p>
+      The code block below connects the Menu button to the navigation menu
+      matching the aria-controls attribute
+      <code>aria-controls="primary-nav"</code> and
+      <code>class="menu-button"</code>:
+    </p>
+    <p class="code-block">
+      <code>const button = document.querySelector(".menu-button");</code>
+      <code>const list = document.querySelector("#primary-nav");</code>
+    </p>
+    <hr />
+    <p>This block opens and closes the navigation menu:</p>
+    <p class="code-block">
+      <code>document.documentElement.classList.add("js");</code>
+      <code>button.hidden = false;</code>
+      <code>list.dataset.open = "false";</code>
+    </p>
+    <hr />
+    <p>
+      This block opens and closes navigation menu when the Menu button is
+      clicked, tapped or focused with the keyboard and the Enter key or Spacebar
+      is pressed:
+    </p>
+    <p class="code-block">
+      <code>function setMenu(open) {</code>
+      <code
+        >&nbsp;&nbsp;button.setAttribute("aria-expanded", String(open));</code
+      >
+      <code>&nbsp;&nbsp;list.dataset.open = String(open);<br />}</code>
+    </p>
+    <hr />
+    <p>
+      The block below toggles the navigation menu open/closed when the mouse is
+      clicked; via aria-expanded true/false:
+    </p>
+    <p class="code-block">
+      <code>button.addEventListener("click", () => {</code>
+      <code
+        >&nbsp;&nbsp;setMenu(button.getAttribute("aria-expanded") !==
+        "true");</code
+      >
+      <code>});</code>
+    </p>
+    <hr />
+    <p>
+      This final block closes the navigation menu when the Escape key is pressed
+      and returns focus to the Menu button.
+    </p>
+    <p class="code-block">
+      <code>document.addEventListener("keydown", (event) => {</code>
+      <code>&nbsp;&nbsp;if (</code>
+      <code>&nbsp;&nbsp;&nbsp;&nbsp;event.key === "Escape" &&</code>
+      <code
+        >&nbsp;&nbsp;&nbsp;&nbsp;button.getAttribute("aria-expanded") ===
+        "true"</code
+      >
+      <code>&nbsp;&nbsp;) {</code>
+      <code>&nbsp;&nbsp;&nbsp;&nbsp;setMenu(false);</code>
+      <code>&nbsp;&nbsp;&nbsp;&nbsp;button.focus();</code>
+      <code>&nbsp;&nbsp;}</code>
+      <code>});</code>
+    </p>
     <h2>6. AI disclosure</h2>
-    <p><strong>Tool and purpose, or none:</strong> [Response]</p>
-    <p><strong>Prompt/task:</strong> [Response]</p>
-    <p><strong>Accepted, changed, or rejected output:</strong> [Response]</p>
-    <p><strong>How I verified it:</strong> [Tests and sources]</p>
+    <p>
+      <strong>Tool and purpose, or none:</strong>
+    </p>
+    <p>
+      I used <strong>Google Gemini</strong> to help clarify rubric terminology;
+      no code was generated or written by AI.
+    </p>
+    <p><strong>Prompt/task:</strong></p>
+    <p>
+      <code>What is meant by "priority visitor task" here:</code>
+    </p>
+    <p>
+      <code
+        >Requirements N1 — Navigation architecture: Identify 2-3 priority
+        visitor tasks and provide 5-7 concise primary destinations in a logical
+        order. Use descriptive link labels and a meaningful site/brand home
+        link.
+      </code>
+    </p>
+    <p>
+      <strong><u>Accepted</u>, <s>changed, or rejected</s> output:</strong>
+    </p>
+    <p class="accepted-output">
+      <em
+        >A priority visitor task is one of the top two or three specific actions
+        or goals that a typical user comes to the website to accomplish. Rather
+        than designing a navigation bar based on how a company or website is
+        organized internally, requirement N1 asks you to start with user intent.
+        Your main navigation links should directly support these core goals.</em
+      >
+    </p>
+    <p><strong>How I verified it:</strong></p>
+    <p>
+      1.
+      <a
+        href="https://niagaraforge.co.uk/blog/how-to-prioritise-tasks-web-design-project/"
+        target="_blank"
+        >How to prioritize tasks in a web project</a
+      ><br />
+
+      Sujan. 10/13/2026.<br />
+      https://niagaraforge.co.uk/blog/how-to-prioritise-tasks-web-design-project/
+    </p>
   </body>
 </html>
