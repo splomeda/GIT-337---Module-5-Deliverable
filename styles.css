@@ -337,6 +337,30 @@ main {
   cursor: pointer;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
+footer {
+  display: flex;
+}
+.footer-left {
+  display: flex;
+  width: 50%;
+  height: auto;
+  justify-content: left;
+  align-items: center;
+}
+.footer-right {
+  display: flex;
+  width: 50%;
+  height: auto;
+  justify-content: right;
+  align-items: center;
+}
+footer a {
+  color: var(--ink);
+  transition: 0.3s;
+}
+footer a:hover {
+  color: var(--action);
+}
 
 /* TODO: add the relative-unit breakpoint justified in navigation-plan.html. */
 @media screen and (min-width: 70rem) {
